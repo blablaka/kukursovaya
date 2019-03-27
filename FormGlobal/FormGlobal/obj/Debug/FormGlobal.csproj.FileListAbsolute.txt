@@ -1,0 +1,10 @@
+D:\Sharp\FormGlobal\FormGlobal\bin\Debug\FormGlobal.exe.config
+D:\Sharp\FormGlobal\FormGlobal\bin\Debug\FormGlobal.exe
+D:\Sharp\FormGlobal\FormGlobal\bin\Debug\FormGlobal.pdb
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csprojAssemblyReference.cache
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Form1.resources
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Properties.Resources.resources
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.GenerateResource.cache
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.CoreCompileInputs.cache
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.exe
+D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.pdb
