@@ -56,5 +56,10 @@ namespace FormGlobal
         {
 
         }
+
+        private void maskedTextBox1_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

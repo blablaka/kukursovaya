@@ -14,7 +14,4 @@ int main()
 		if (a[i] > 0) { count++; }
 
 	cout << "Kol-vo = " << count;
-
-	cin.get();
-	cin.get();
 }

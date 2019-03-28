@@ -8,3 +8,13 @@ D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.GenerateResource.cach
 D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.CoreCompileInputs.cache
 D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.exe
 D:\Sharp\FormGlobal\FormGlobal\obj\Debug\FormGlobal.pdb
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\bin\Debug\FormGlobal.exe.config
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\bin\Debug\FormGlobal.exe
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\bin\Debug\FormGlobal.pdb
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csprojAssemblyReference.cache
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Form1.resources
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Properties.Resources.resources
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.GenerateResource.cache
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.csproj.CoreCompileInputs.cache
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.exe
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.pdb
