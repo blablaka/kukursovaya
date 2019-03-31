@@ -61,5 +61,12 @@ namespace FormGlobal
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Registration frm = new Registration();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
