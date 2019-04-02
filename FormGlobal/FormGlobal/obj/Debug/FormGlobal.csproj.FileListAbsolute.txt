@@ -19,3 +19,4 @@ D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.c
 D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.exe
 D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.pdb
 D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Registration.resources
+D:\Сашка\Kursovaya\kukursovaya\FormGlobal\FormGlobal\obj\Debug\FormGlobal.Form2.resources

@@ -68,5 +68,12 @@ namespace FormGlobal
             frm.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
