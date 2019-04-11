@@ -21,7 +21,7 @@ namespace Lab3TA
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\ТА\Lab3\Lab3TA\Lab3TA\Database2.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\ТА\Lab3\Lab3TA\Lab3TA\Database1.mdf;Integrated Security=True";
 
             sqlConnection = new SqlConnection(connectionString);
 
@@ -29,7 +29,7 @@ namespace Lab3TA
 
             SqlDataReader sqlReader = null;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM[Bread]", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM[Medicina]", sqlConnection);
 
             try
             {
@@ -71,7 +71,7 @@ namespace Lab3TA
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
                 !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text))
             {
-                SqlCommand command = new SqlCommand("INSERT INTO [Bread] (Name, Price)VALUES(@Name, @Price)", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Medicina] (Name, Price)VALUES(@Name, @Price)", sqlConnection);
 
                 command.Parameters.AddWithValue("Name", textBox1.Text);
 
@@ -93,7 +93,7 @@ namespace Lab3TA
 
             SqlDataReader sqlReader = null;
 
-            SqlCommand command = new SqlCommand("SELECT * FROM[Bread]", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM[Medicina]", sqlConnection);
 
             try
             {
@@ -124,7 +124,7 @@ namespace Lab3TA
                 !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrEmpty(textBox4.Text) &&
                 !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))
             {
-                SqlCommand command = new SqlCommand("UPDATE [Bread] SET [Name]=@Name, [Price]=@Price WHERE [Id]=@Id", sqlConnection);
+                SqlCommand command = new SqlCommand("UPDATE [Medicina] SET [Name]=@Name, [Price]=@Price WHERE [Id]=@Id", sqlConnection);
 
                 command.Parameters.AddWithValue("Id", textBox3.Text);
                 command.Parameters.AddWithValue("Name", textBox4.Text);
@@ -153,7 +153,7 @@ namespace Lab3TA
 
             if (!string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrEmpty(textBox6.Text))
             {
-                SqlCommand command = new SqlCommand("DELETE FROM [Bread] WHERE [Id]=@Id", sqlConnection);
+                SqlCommand command = new SqlCommand("DELETE FROM [Medicina] WHERE [Id]=@Id", sqlConnection);
 
                 command.Parameters.AddWithValue("Id", textBox6.Text);
 
