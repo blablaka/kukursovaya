@@ -14,9 +14,19 @@ namespace Kursovaya
 {
     public partial class Form1 : Form
     {
+        Button b;
         public Form1()
         {
             InitializeComponent();
+            {
+                b = new Button();
+                this.Controls.Add(b);
+                this.b.Click += new System.EventHandler(this.bu_Click);
+            }
+        }
+        private void bu_Click(object sender, EventArgs e)
+        {
+            PersonalArea.l.Text = "новый текст";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -124,10 +134,17 @@ namespace Kursovaya
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            PersonalArea frm = new PersonalArea();
+            frm.Show();
+            this.Hide();
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

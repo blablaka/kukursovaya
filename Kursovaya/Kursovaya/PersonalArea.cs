@@ -15,6 +15,21 @@ namespace Kursovaya
         public PersonalArea()
         {
             InitializeComponent();
+            l = new Label();
+            l.Text = "текст";
+            this.Controls.Add(PersonalArea.l);
+        }
+        public static Label l;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            l.Text = "новый текст";
+        }
+
+        private void PersonalArea_Load(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
         }
     }
 }
