@@ -71,11 +71,11 @@ namespace Lab3TA
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
                 !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text))
             {
-            SqlCommand command = new SqlCommand("INSERT INTO [Medicina] (Name, Price)VALUES(@Name, @Price)", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Medicina] (Name, Price)VALUES(@Name, @Price)", sqlConnection);
 
-            command.Parameters.AddWithValue("Name", textBox1.Text);
+                command.Parameters.AddWithValue("Name", textBox1.Text);
 
-            command.Parameters.AddWithValue("Price", textBox2.Text);
+                command.Parameters.AddWithValue("Price", textBox2.Text);
 
                 await command.ExecuteNonQueryAsync();
             } 
