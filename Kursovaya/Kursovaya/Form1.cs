@@ -14,19 +14,9 @@ namespace Kursovaya
 {
     public partial class Form1 : Form
     {
-        Button b;
         public Form1()
         {
             InitializeComponent();
-            {
-                b = new Button();
-                this.Controls.Add(b);
-                this.b.Click += new System.EventHandler(this.bu_Click);
-            }
-        }
-        private void bu_Click(object sender, EventArgs e)
-        {
-            PersonalArea.l.Text = "новый текст";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -134,9 +124,38 @@ namespace Kursovaya
 
         private void button7_Click(object sender, EventArgs e)
         {
-            PersonalArea frm = new PersonalArea();
-            frm.Show();
-            this.Hide();
+            if (label10.Visible)
+                label10.Visible = false;
+            if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text) &&
+                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                PersonalArea frm = new PersonalArea
+                {
+                    asd = textBox2.Text
+                };
+                frm.Show();
+                this.Hide();
+            }
+            else if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text))
+            {
+                label10.Visible = true;
+
+                label10.Text = "Поле 'Логин' должно быть заполнен!";
+            }
+            else if (!string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                label10.Visible = true;
+
+                label10.Text = "Введите пароль!";
+            }
+            else
+            {
+                label10.Visible = true;
+
+                label10.Text = "Поля 'Пароль' и 'Логин' должны быть заполнены";
+            }
+            
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -145,6 +164,47 @@ namespace Kursovaya
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            string c = e.KeyChar.ToString();
+            if ((!Regex.Match(c, "[a-zA-Z]|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string c = e.KeyChar.ToString();
+            if ((!Regex.Match(c, "[a-zA-Z]|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+            
+        }
+        private void textBox2_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+    
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click_1(object sender, EventArgs e)
         {
 
         }

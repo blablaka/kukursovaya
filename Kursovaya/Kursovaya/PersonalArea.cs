@@ -12,24 +12,33 @@ namespace Kursovaya
 {
     public partial class PersonalArea : Form
     {
+        public string asd;
         public PersonalArea()
         {
             InitializeComponent();
-            l = new Label();
-            l.Text = "текст";
-            this.Controls.Add(PersonalArea.l);
         }
         public static Label l;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            l.Text = "новый текст";
+            
         }
 
         private void PersonalArea_Load(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
-            f.Show();
+            
+        }
+
+        private void PersonalArea_Activated(object sender, EventArgs e)
+        {
+            label2.Text = asd;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
         }
     }
 }

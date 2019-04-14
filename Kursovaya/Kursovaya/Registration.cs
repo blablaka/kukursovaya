@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Kursovaya
 {
     public partial class Registration : Form
     {
+        SqlConnection sqlConnection;
         public Registration()
         {
             InitializeComponent();
@@ -21,6 +23,10 @@ namespace Kursovaya
 
         private void Registration_Load(object sender, EventArgs e)
         {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\Kursovaya\Kursovaya\Database1.mdf;Integrated Security=True";
+
+            sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
 
         }
 
@@ -107,20 +113,71 @@ namespace Kursovaya
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox5.Text == textBox4.Text)
+            /*if ((textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox2.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox2.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox2.Text == "") ||
+               (textBox1.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox2.Text == "" && textBox1.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox1.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox1.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == ""))
             {
-                label8.Visible = true;
-                label8.Text = "Правильный пароль";
+                MessageBox.Show("Вы не заполнили все поля!");
             }
-            else
+            if (textBox5.Text != textBox4.Text)
             {
-                label8.Text = "Неправильный пароль";
-                Task.Factory.StartNew(() =>
-                {
-                    Thread.Sleep(3000);
-                    Invoke((Action)(() => { label8.Visible = false; }));
-                });
+                MessageBox.Show("Неправильный пароль");
+            }*/
+            /*if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
+                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text) &&
+                !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text) &&
+                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrEmpty(textBox4.Text) &&
+                !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrEmpty(textBox6.Text) &&
+                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))*/
+            {
+                //sqlConnection.Open();
+                
+                    SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, E-mail, Логин, Пароль, Повторите пароль)VALUES(@Имя, @Фамилия, @E-mail, @Логин, @Пароль, @Повторите пароль)", sqlConnection);
+                    
+
+                    command.Parameters.AddWithValue("Имя", textBox1.Text);
+
+                    command.Parameters.AddWithValue("Фамилия", textBox2.Text);
+
+                    command.Parameters.AddWithValue("E-mail", textBox6.Text);
+
+                    command.Parameters.AddWithValue("Логин", textBox3.Text);
+
+                    command.Parameters.AddWithValue("Пароль", textBox4.Text);
+
+                    command.Parameters.AddWithValue("Повторите пароль", textBox5.Text);
+
+                    
+               
+
+                command.ExecuteNonQuery();
+                sqlConnection.Close();
             }
+        }
+
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
+                sqlConnection.Close();
         }
     }
 }
