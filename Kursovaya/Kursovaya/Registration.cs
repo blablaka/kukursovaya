@@ -142,23 +142,23 @@ namespace Kursovaya
             {
                 MessageBox.Show("Неправильный пароль");
             }*/
-            /*if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
                 !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text) &&
                 !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text) &&
                 !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrEmpty(textBox4.Text) &&
                 !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrEmpty(textBox6.Text) &&
-                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))*/
+                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))
             {
-                //sqlConnection.Open();
                 
-                    SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, E-mail, Логин, Пароль, Повторите пароль)VALUES(@Имя, @Фамилия, @E-mail, @Логин, @Пароль, @Повторите пароль)", sqlConnection);
+                
+                    SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, Email, Логин, Пароль, Повторите пароль)VALUES(@Имя, @Фамилия, @Email, @Логин, @Пароль, @Повторите пароль)", sqlConnection);
                     
 
                     command.Parameters.AddWithValue("Имя", textBox1.Text);
 
                     command.Parameters.AddWithValue("Фамилия", textBox2.Text);
 
-                    command.Parameters.AddWithValue("E-mail", textBox6.Text);
+                    command.Parameters.AddWithValue("Email", textBox6.Text);
 
                     command.Parameters.AddWithValue("Логин", textBox3.Text);
 
@@ -170,6 +170,7 @@ namespace Kursovaya
                
 
                 command.ExecuteNonQuery();
+
                 sqlConnection.Close();
             }
         }
