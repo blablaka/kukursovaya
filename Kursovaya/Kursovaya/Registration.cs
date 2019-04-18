@@ -149,9 +149,9 @@ namespace Kursovaya
                 !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrEmpty(textBox6.Text) &&
                 !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))
             {
-                
-                
-                    SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, Email, Логин, Пароль, Повторите пароль)VALUES(@Имя, @Фамилия, @Email, @Логин, @Пароль, @Повторите пароль)", sqlConnection);
+
+                try {    
+                    SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, Email, Логин, Пароль)VALUES(@Имя, @Фамилия, @Email, @Логин, @Пароль)", sqlConnection);
                     
 
                     command.Parameters.AddWithValue("Имя", textBox1.Text);
@@ -163,16 +163,18 @@ namespace Kursovaya
                     command.Parameters.AddWithValue("Логин", textBox3.Text);
 
                     command.Parameters.AddWithValue("Пароль", textBox4.Text);
-
-                    command.Parameters.AddWithValue("Повторите пароль", textBox5.Text);
-
-                    
-               
+                
 
                 command.ExecuteNonQuery();
-
-                sqlConnection.Close();
+                MessageBox.Show("Данные добавлены!");
             }
+catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+            sqlConnection.Close();
         }
 
         private void Registration_FormClosing(object sender, FormClosingEventArgs e)
