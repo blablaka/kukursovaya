@@ -113,7 +113,7 @@ namespace Kursovaya
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*if ((textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+            if ((textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
                (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
                (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
                (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
@@ -126,56 +126,61 @@ namespace Kursovaya
                (textBox3.Text == "" && textBox4.Text == "" && textBox2.Text == "" && textBox6.Text == "") ||
                (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox2.Text == "") ||
                (textBox1.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox2.Text == "" && textBox1.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox1.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
                (textBox3.Text == "" && textBox4.Text == "" && textBox1.Text == "" && textBox6.Text == "") ||
                (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox1.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
-               (textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == ""))
+               (textBox1.Text == "" && textBox2.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox1.Text == "" && textBox4.Text == "" && textBox2.Text == "" && textBox6.Text == "") ||
+               (textBox1.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox2.Text == "") ||
+               (textBox3.Text == "" && textBox1.Text == "" && textBox2.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox1.Text == "" && textBox5.Text == "" && textBox2.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox1.Text == "" && textBox2.Text == "") ||
+               (textBox6.Text == "" && textBox4.Text == "" && textBox5.Text == "") ||
+               (textBox3.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox4.Text == "" && textBox6.Text == "") ||
+               (textBox3.Text == "" && textBox6.Text == "" && textBox5.Text == "") ||
+               (textBox5.Text == "" && textBox6.Text == "" && textBox1.Text == "") ||
+               (textBox6.Text == "" && textBox4.Text == "" && textBox1.Text == "") ||
+               (textBox5.Text == "" && textBox4.Text == "" && textBox1.Text == "") ||
+               (textBox2.Text == "" && textBox6.Text == "" && textBox1.Text == "") ||
+               (textBox2.Text == "" && textBox5.Text == "" && textBox1.Text == "") ||
+               (textBox3.Text == "" && textBox2.Text == "" && textBox1.Text == "") ||
+               (textBox5.Text == "" && textBox6.Text == "") ||
+               (textBox4.Text == "" && textBox6.Text == "") ||
+               (textBox4.Text == "" && textBox5.Text == "") ||
+               (textBox1.Text == "" && textBox6.Text == "") ||
+               (textBox1.Text == "" && textBox5.Text == "") ||
+               (textBox1.Text == "" && textBox2.Text == "") ||
+               (textBox6.Text == "") ||
+               (textBox5.Text == "") ||
+               (textBox1.Text == ""))
             {
                 MessageBox.Show("Вы не заполнили все поля!");
             }
-            if (textBox5.Text != textBox4.Text)
+            if ((textBox5.Text != textBox4.Text))
             {
                 MessageBox.Show("Неправильный пароль");
-            }*/
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox1.Text) &&
-                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text) &&
-                !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text) &&
-                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrEmpty(textBox4.Text) &&
-                !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrEmpty(textBox6.Text) &&
-                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrEmpty(textBox5.Text))
-            {
-
-                try {    
+            }
+            else if ((textBox5.Text == textBox4.Text) && (textBox5.Text!="" && textBox4.Text!=""))
+            { 
+                try
+                {
                     SqlCommand command = new SqlCommand("INSERT INTO [Registration] (Имя, Фамилия, Email, Логин, Пароль)VALUES(@Имя, @Фамилия, @Email, @Логин, @Пароль)", sqlConnection);
-                    
-
                     command.Parameters.AddWithValue("Имя", textBox1.Text);
-
                     command.Parameters.AddWithValue("Фамилия", textBox2.Text);
-
                     command.Parameters.AddWithValue("Email", textBox6.Text);
-
                     command.Parameters.AddWithValue("Логин", textBox3.Text);
-
                     command.Parameters.AddWithValue("Пароль", textBox4.Text);
-                
-
-                command.ExecuteNonQuery();
-                MessageBox.Show("Данные добавлены!");
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Данные добавлены!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
-            sqlConnection.Close();
-        }
+                    
 
         private void Registration_FormClosing(object sender, FormClosingEventArgs e)
         {
