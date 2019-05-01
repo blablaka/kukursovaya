@@ -34,7 +34,7 @@ namespace Kursovaya
         {
 
         }
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) //Имя
         {
             string c = e.KeyChar.ToString();
             if ((!Regex.Match(c, @"\p{IsCyrillic}|\p{IsCyrillicSupplement}").Success) && (e.KeyChar != (char)Keys.Back))
@@ -47,7 +47,7 @@ namespace Kursovaya
         {
 
         }
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e) //Фамилия
         {
             string c = e.KeyChar.ToString();
             if ((!Regex.Match(c, @"\p{IsCyrillic}|\p{IsCyrillicSupplement}").Success) && (e.KeyChar != (char)Keys.Back))
@@ -60,10 +60,10 @@ namespace Kursovaya
         {
 
         }
-        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e) //E-mail
         {
             string c = e.KeyChar.ToString();
-            if ((!Regex.Match(c, @"[a-zA-Z]|,|\.|@|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
+            if ((!Regex.Match(c, @"[a-zA-Z]|,|\.|@||_|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
             {
                 e.Handled = true;
             }
@@ -73,7 +73,7 @@ namespace Kursovaya
         {
 
         }
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e) //Логин
         {
             string c = e.KeyChar.ToString();
             if ((!Regex.Match(c, "[a-zA-Z]|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
@@ -86,7 +86,7 @@ namespace Kursovaya
         {
 
         }
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e) //Пароль
         {
             string c = e.KeyChar.ToString();
             if ((!Regex.Match(c, "[a-zA-Z]|[0-9]").Success) && (e.KeyChar != (char)Keys.Back))
@@ -104,14 +104,14 @@ namespace Kursovaya
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Главная
         {
             Form1 frm = new Form1();
             frm.Show();
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Зарегестрировать пользователя
         {
             if ((textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
                (textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "") ||
@@ -161,7 +161,7 @@ namespace Kursovaya
             {
                 MessageBox.Show("Неправильный пароль");
             }
-            else if ((textBox5.Text == textBox4.Text) && (textBox5.Text!="" && textBox4.Text!=""))
+            else if ((textBox5.Text == textBox4.Text) && (textBox5.Text!="" && textBox4.Text!="")) //занесение данных в БД
             { 
                 try
                 {
@@ -182,7 +182,7 @@ namespace Kursovaya
         }
                     
 
-        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e) // При закрытии закрывается соединение
         {
             if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
                 sqlConnection.Close();

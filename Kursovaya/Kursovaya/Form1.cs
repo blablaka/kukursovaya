@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Kursovaya
 {
     public partial class Form1 : Form
     {
+        SqlConnection sqlConnection;
         public Form1()
         {
             InitializeComponent();
@@ -126,8 +128,16 @@ namespace Kursovaya
         {
             if (label10.Visible)
                 label10.Visible = false;
-            if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrEmpty(textBox3.Text) &&
-                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            
+            
+            //Проверка введенного логина и пароля
+
+            
+            string query = "SELECT * FROM Registration WHERE Логин = '" + textBox2.Text.Trim() + "' AND Пароль = '" + textBox3.Text.Trim() + "'";
+            SqlDataAdapter sqlDA = new SqlDataAdapter(query, sqlConnection);
+            DataTable dT = new DataTable();
+            sqlDA.Fill(dT);
+            if (dT.Rows.Count == 1)
             {
                 PersonalArea frm = new PersonalArea
                 {
@@ -154,8 +164,6 @@ namespace Kursovaya
 
                 label10.Text = "Поля 'Пароль' и 'Логин' должны быть заполнены";
             }
-            
-
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -165,8 +173,10 @@ namespace Kursovaya
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\Kursovaya\Kursovaya\Database1.mdf;Integrated Security=True";
 
+            sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
         }
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
@@ -206,6 +216,11 @@ namespace Kursovaya
         }
 
         private void tabPage4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
         {
 
         }

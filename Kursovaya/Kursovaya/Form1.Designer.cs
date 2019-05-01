@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -79,9 +78,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.database1DataSet = new Kursovaya.Database1DataSet();
-            this.registrationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.registrationTableAdapter = new Kursovaya.Database1DataSetTableAdapters.RegistrationTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,8 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -295,6 +289,7 @@
             this.button10.TabIndex = 11;
             this.button10.Text = "Обновить";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button4
             // 
@@ -661,20 +656,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Потолок";
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // registrationBindingSource
-            // 
-            this.registrationBindingSource.DataMember = "Registration";
-            this.registrationBindingSource.DataSource = this.database1DataSet;
-            // 
-            // registrationTableAdapter
-            // 
-            this.registrationTableAdapter.ClearBeforeFill = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -699,8 +680,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrationBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,9 +735,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button12;
-        private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource registrationBindingSource;
-        private Database1DataSetTableAdapters.RegistrationTableAdapter registrationTableAdapter;
     }
 }
 
