@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Kursovaya
 {
     public partial class Form1 : Form
@@ -133,7 +134,7 @@ namespace Kursovaya
             //Проверка введенного логина и пароля
 
             
-            string query = "SELECT * FROM Registration WHERE Логин = '" + textBox2.Text.Trim() + "' AND Пароль = '" + textBox3.Text.Trim() + "'";
+            string query = "SELECT * FROM Registration WHERE Login = '" + textBox2.Text.Trim() + "' AND Password = '" + textBox3.Text.Trim() + "'";
             SqlDataAdapter sqlDA = new SqlDataAdapter(query, sqlConnection);
             DataTable dT = new DataTable();
             sqlDA.Fill(dT);
@@ -173,7 +174,7 @@ namespace Kursovaya
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\Kursovaya\Kursovaya\Database1.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\Kursovaya\Kursovaya\Kursovaya.mdf;Integrated Security=True";
 
             sqlConnection = new SqlConnection(connectionString);
             sqlConnection.Open();

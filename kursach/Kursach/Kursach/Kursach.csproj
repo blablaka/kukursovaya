@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D59840A-7189-4888-9DEA-41D36B3F2413}</ProjectGuid>
+    <ProjectGuid>{0FDF9D24-5539-4D84-AA31-9B780A01D3E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Kursovaya</RootNamespace>
-    <AssemblyName>Kursovaya</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Kursach</RootNamespace>
+    <AssemblyName>Kursach</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,15 +48,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Security">
-      <HintPath>Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql">
-      <HintPath>Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.dll</HintPath>
-    </Reference>
-    <Reference Include="policy.2.0.Npgsql">
-      <HintPath>Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\policy.2.0.Npgsql.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -96,7 +87,6 @@
     <Compile Include="Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,7 +101,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
@@ -120,7 +109,7 @@
       <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -133,12 +122,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gory_ozero_vershiny_derevya_118251_3840x2160.jpg" />
+    <Content Include="kursach.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kursach_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>kursach.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -146,15 +141,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Kursovaya.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Kursovaya_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Kursovaya.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

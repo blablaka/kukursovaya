@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kursovaya", "Kursovaya\Kursovaya.csproj", "{8D59840A-7189-4888-9DEA-41D36B3F2413}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Npgsql", "Npgsql", "{A39CF0CC-C979-4EF1-A225-233CDB6FDB5D}"
+	ProjectSection(SolutionItems) = preProject
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Mono.Security.dll = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Mono.Security.dll
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.dll = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.dll
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.pdb = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.pdb
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.XML = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\Npgsql.XML
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\policy.2.0.Npgsql.config = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\policy.2.0.Npgsql.config
+		Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\policy.2.0.Npgsql.dll = Kursovaya\Npgsql\Npgsql2.0.11.91-bin-ms.net3.5sp1\policy.2.0.Npgsql.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
