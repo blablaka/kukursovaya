@@ -41,6 +41,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -73,8 +75,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -241,6 +241,31 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Стена";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Гостиная",
+            "Кухня/Столовая",
+            "Спальня",
+            "Ванная/Санузел",
+            "Прихожая/Холл",
+            "Гардеробная"});
+            this.comboBox4.Location = new System.Drawing.Point(112, 55);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(159, 28);
+            this.comboBox4.TabIndex = 12;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Monotype Corsiva", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label20.Location = new System.Drawing.Point(7, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 26);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Комната";
             // 
             // comboBox1
             // 
@@ -563,31 +588,6 @@
             this.label19.Size = new System.Drawing.Size(133, 39);
             this.label19.TabIndex = 11;
             this.label19.Text = "Потолок";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Monotype Corsiva", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label20.Location = new System.Drawing.Point(7, 57);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 26);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Комната";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Гостиная",
-            "Кухня/Столовая",
-            "Спальня",
-            "Ванная/Санузел",
-            "Прихожая/Холл",
-            "Гардеробная"});
-            this.comboBox4.Location = new System.Drawing.Point(112, 55);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(159, 28);
-            this.comboBox4.TabIndex = 12;
             // 
             // Form1
             // 
