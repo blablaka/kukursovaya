@@ -75,6 +75,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -222,6 +223,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -275,10 +277,11 @@
             "Панели из дерева и ПВХ",
             "Краска",
             "Обои"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 155);
+            this.comboBox1.Location = new System.Drawing.Point(14, 175);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 28);
+            this.comboBox1.Size = new System.Drawing.Size(204, 28);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.Text = "Материал облицовки";
             // 
             // button6
             // 
@@ -293,18 +296,18 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(1118, 3);
+            this.button5.Location = new System.Drawing.Point(1109, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 37);
+            this.button5.Size = new System.Drawing.Size(102, 37);
             this.button5.TabIndex = 8;
             this.button5.Text = "Обновить";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(190, 155);
+            this.button4.Location = new System.Drawing.Point(225, 175);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 28);
+            this.button4.Size = new System.Drawing.Size(126, 37);
             this.button4.TabIndex = 7;
             this.button4.Text = "Подтвердить";
             this.button4.UseVisualStyleBackColor = true;
@@ -326,6 +329,7 @@
             this.label9.Size = new System.Drawing.Size(51, 20);
             this.label9.TabIndex = 4;
             this.label9.Text = "label9";
+            this.label9.Visible = false;
             // 
             // label8
             // 
@@ -472,7 +476,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label14.Location = new System.Drawing.Point(8, 11);
+            this.label14.Location = new System.Drawing.Point(7, 2);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(69, 39);
             this.label14.TabIndex = 10;
@@ -589,6 +593,16 @@
             this.label19.TabIndex = 11;
             this.label19.Text = "Потолок";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label21.Location = new System.Drawing.Point(13, 146);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(205, 26);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Материал облицовки";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -660,6 +674,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }
 
