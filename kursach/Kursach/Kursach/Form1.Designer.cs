@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label21 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -75,12 +78,27 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.kursachDataSet = new Kursach.kursachDataSet();
+            this.kursachDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomTableAdapter = new Kursach.kursachDataSetTableAdapters.RoomTableAdapter();
+            this.tableAdapterManager = new Kursach.kursachDataSetTableAdapters.TableAdapterManager();
+            this.wallBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wallTableAdapter = new Kursach.kursachDataSetTableAdapters.WallTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.типКомнатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -223,6 +241,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.label20);
@@ -243,6 +263,30 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Стена";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.типDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.wallBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(299, 218);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(266, 405);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label21.Location = new System.Drawing.Point(13, 146);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(205, 26);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Материал облицовки";
             // 
             // comboBox4
             // 
@@ -311,6 +355,7 @@
             this.button4.TabIndex = 7;
             this.button4.Text = "Подтвердить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // textBox3
             // 
@@ -593,15 +638,66 @@
             this.label19.TabIndex = 11;
             this.label19.Text = "Потолок";
             // 
-            // label21
+            // kursachDataSet
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label21.Location = new System.Drawing.Point(13, 146);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(205, 26);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "Материал облицовки";
+            this.kursachDataSet.DataSetName = "kursachDataSet";
+            this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kursachDataSetBindingSource
+            // 
+            this.kursachDataSetBindingSource.DataSource = this.kursachDataSet;
+            this.kursachDataSetBindingSource.Position = 0;
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "Room";
+            this.roomBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // roomTableAdapter
+            // 
+            this.roomTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.RoomTableAdapter = this.roomTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Kursach.kursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WallTableAdapter = this.wallTableAdapter;
+            // 
+            // wallBindingSource
+            // 
+            this.wallBindingSource.DataMember = "Wall";
+            this.wallBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // wallTableAdapter
+            // 
+            this.wallTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.типКомнатыDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.roomBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 218);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(278, 405);
+            this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.Visible = false;
+            // 
+            // типКомнатыDataGridViewTextBoxColumn
+            // 
+            this.типКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Тип комнаты";
+            this.типКомнатыDataGridViewTextBoxColumn.HeaderText = "Тип комнаты";
+            this.типКомнатыDataGridViewTextBoxColumn.Name = "типКомнатыDataGridViewTextBoxColumn";
+            // 
+            // типDataGridViewTextBoxColumn
+            // 
+            this.типDataGridViewTextBoxColumn.DataPropertyName = "Тип";
+            this.типDataGridViewTextBoxColumn.HeaderText = "Тип";
+            this.типDataGridViewTextBoxColumn.Name = "типDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -617,10 +713,16 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -675,6 +777,17 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource kursachDataSetBindingSource;
+        private kursachDataSet kursachDataSet;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private kursachDataSetTableAdapters.RoomTableAdapter roomTableAdapter;
+        private kursachDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private kursachDataSetTableAdapters.WallTableAdapter wallTableAdapter;
+        private System.Windows.Forms.BindingSource wallBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типКомнатыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типDataGridViewTextBoxColumn;
     }
 }
 

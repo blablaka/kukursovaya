@@ -106,10 +106,20 @@ namespace Kursach
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursachDataSet.Wall". При необходимости она может быть перемещена или удалена.
+            this.wallTableAdapter.Fill(this.kursachDataSet.Wall);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursachDataSet.Room". При необходимости она может быть перемещена или удалена.
+            this.roomTableAdapter.Fill(this.kursachDataSet.Room);
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Сашка\Kursovaya\kukursovaya\kursach\Kursach\Kursach\kursach.mdf;Integrated Security=True";
 
             sqlConnection = new SqlConnection(connectionString);
             sqlConnection.Open();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+            dataGridView2.Visible = true;
         }
     }
 }
