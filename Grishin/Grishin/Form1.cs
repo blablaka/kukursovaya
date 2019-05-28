@@ -39,15 +39,15 @@ namespace Grishin
 
         private void SelectlistBox_DoubleClick(object sender, EventArgs e)
         {
-            /*SqlCommand cmd = new SqlCommand("listofbirthday", conn);
+            SqlCommand cmd = new SqlCommand("chto-to", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataRowView dr = (DataRowView)selectlistBox.SelectedItem;
-            cmd.Parameters.Add("@depname", sqlDbType.Varchar).Value = dr.Row.ItemArray[0].ToString();
-            label4.Text = "Department:" + dr.Row.ItemArray[0].ToString();
+            cmd.Parameters.Add("@depname", SqlDbType.VarChar).Value = dr.Row.ItemArray[0].ToString();
+            label4.Text = "Street:" + dr.Row.ItemArray[0].ToString();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            DataGridView.DataSource = dt;*/
+            dataGridView1.DataSource = dt;
         }
     }
 }
