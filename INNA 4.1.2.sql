@@ -1,5 +1,5 @@
 use var4sql
-select SURNAME, GOTOHOSPITAL, NAME, SEX, AGE, dep_name
+select SURNAME, GOTOHOSPITAL, NAME, SEX, AGE, department.dep_kod
 from PATIENT, department
 where GOTOHOSPITAL >= '20010301' and GOTOHOSPITAL < '20010401'
 order by GOTOHOSPITAL
