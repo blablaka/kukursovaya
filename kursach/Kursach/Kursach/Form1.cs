@@ -79,7 +79,7 @@ namespace Kursach
             {
                 PersonalArea frm = new PersonalArea
                 {
-                    asd = textBox2.Text
+                    asd = textBox1.Text
                 };
                 frm.Show();
                 this.Hide();
